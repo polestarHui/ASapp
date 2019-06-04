@@ -1,0 +1,25 @@
+//导入vue-router包
+import VueRouter from 'vue-router'
+// 导入tab栏的五个子组件
+import home from './components/tab/home.vue'
+import classes from './components/tab/classes.vue'
+import find from './components/tab/find.vue'
+import cart from './components/tab/cart.vue'
+import user from './components/tab/user.vue'
+import newslist from './components/news/newslist.vue'
+import newsinfo from './components/news/newsinfo.vue'
+var router = new VueRouter({
+    routes: [
+        { path: '/', redirect: '/home' },
+        { path: '/home', component: home },
+        { path: '/classes', component: classes },
+        { path: '/find', component: find },
+        { path: '/cart', component: cart },
+        { path: '/user', component: user },
+        { path: '/home/newslist', component: newslist },
+        { path: '/home/newsinfo/:id', component: newsinfo },
+    ],
+    // 自定义类名
+    linkActiveClass: 'mui-active'
+})
+export default router; //重点，当分离出来router.js模块后，一定要把router路由规则对象暴露出去。

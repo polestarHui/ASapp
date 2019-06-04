@@ -8,6 +8,8 @@ import cart from './components/tab/cart.vue'
 import user from './components/tab/user.vue'
 import newslist from './components/news/newslist.vue'
 import newsinfo from './components/news/newsinfo.vue'
+import imagelist from './components/photo/imagelist.vue'
+import imageinfo from './components/photo/imageinfo.vue'
 var router = new VueRouter({
     routes: [
         { path: '/', redirect: '/home' },
@@ -18,6 +20,8 @@ var router = new VueRouter({
         { path: '/user', component: user },
         { path: '/home/newslist', component: newslist },
         { path: '/home/newsinfo/:id', component: newsinfo },
+        { path: '/home/imageslist', component: imagelist },
+
     ],
     // 自定义类名
     linkActiveClass: 'mui-active'

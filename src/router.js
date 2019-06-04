@@ -21,6 +21,7 @@ var router = new VueRouter({
         { path: '/home/newslist', component: newslist },
         { path: '/home/newsinfo/:id', component: newsinfo },
         { path: '/home/imageslist', component: imagelist },
+        { path: '/home/imageinfo/:id', component: imageinfo }
 
     ],
     // 自定义类名

@@ -6,12 +6,14 @@
       infinite-scroll-disabled="isLoading"
       infinite-scroll-distance="100"
       style="max-height:100vh;overflow-y:auto;">
-      <li v-for="item in list" :key="item.id">
+      <li v-for="item in list" :key="item.id" >
+        <router-link :to="'/home/imageinfo/'+item.id">
         <img v-lazy="item.img_url" />
         <div class="info">
           <h4 class="info_title">{{ item.title }}</h4>
           <p class="info_abstract">{{ item.abstract }}</p>
         </div>
+        </router-link>
       </li>
       <!-- 加载动画部分 -->
       <li class="more_loading">

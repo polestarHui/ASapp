@@ -32,6 +32,10 @@ Vue.filter('dateFormat', function(dateStr, pattern = "YYYY--MM--DD HH:MM") {
     return Moment(dateStr).format(pattern)
 })
 
+// 导入vue-preview
+import VuePreview from 'vue-preview'
+Vue.use(VuePreview)
+
 
 
 var vm = new Vue({

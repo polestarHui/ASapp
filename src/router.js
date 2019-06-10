@@ -10,6 +10,8 @@ import newslist from './components/news/newslist.vue'
 import newsinfo from './components/news/newsinfo.vue'
 import imagelist from './components/photo/imagelist.vue'
 import imageinfo from './components/photo/imageinfo.vue'
+import goodslist from './components/shop/goodslist.vue'
+import goodsinfo from './components/shop/goodsinfo.vue'
 var router = new VueRouter({
     routes: [
         { path: '/', redirect: '/home' },
@@ -21,7 +23,9 @@ var router = new VueRouter({
         { path: '/home/newslist', component: newslist },
         { path: '/home/newsinfo/:id', component: newsinfo },
         { path: '/home/imageslist', component: imagelist },
-        { path: '/home/imageinfo/:id', component: imageinfo }
+        { path: '/home/imageinfo/:id', component: imageinfo },
+        { path: '/home/goodslist', component: goodslist },
+        { path: '/home/goodsinfo/:id', component: goodsinfo, name: 'goodsinfo' },
 
     ],
     // 自定义类名

@@ -86,6 +86,7 @@ export default {
     created() {
         this.getSwipeData();
         this.getGoodsInfo();
+        // this.getGoodsCount();
     },
     methods:{
         // 获取了轮播图数据
@@ -123,6 +124,16 @@ export default {
             // 子组件向父组件传值
             // 1、父组件通过事件机制，给予组件一个带参数的方法
             // 2、在子组件内部，找合适的时机，调用该方法，把想传给父组件的数据传递过来
+            var goods = {
+                id:this.goodsId,
+                img_url:this.goodsInfo.img_url,
+                title:this.goodsInfo.title,
+                price:this.goodsInfo.sell_price,
+                count:this.goodsCount
+            }
+            // this.$store.state.cart
+            // 应该调用仓储对象mutations里提供的方法,来间接处理state中的数据成员
+            this.$store.commit('addToCart',goods);
         },
         getGoodsCount(count){
             this.goodsCount=count;
@@ -132,16 +143,6 @@ export default {
         swipe,
         numberbox,
         comment,
-    },
-    // 这里使用onchange来监听数量的变化是不妥的
-    // 因为w3c规定的onchange事件有三个步骤，1、获得焦点 2、数据变化 3、失去焦点
-    // 而这里，input标签压根就没有获得过焦点
-    // 正确做法，使用watch来监听currentCount
-    watch:{
-        'currentCount':function(newValue,oldValue){
-            // 1、数据发生变化，立即调用父组件传递过来的方法getCount，把currentCount传递给
-            this.$emit("getCount",newValue);
-        }
     }
 }
 </script>
@@ -204,6 +205,14 @@ export default {
             h3{
                 font-size: 16px;
                 color: #999;
+                margin-bottom: 20px;
+            }
+            p{
+                color: #333;
+                label.lb{
+                    color: #999;
+                    margin-right: 20px;
+                }
             }
         }
         .imgInfo{
@@ -215,6 +224,9 @@ export default {
                 margin: 0;
                 li{
                     width: 100%;
+                    img{
+                        width: 100%;
+                    }
                 }
             }
         }

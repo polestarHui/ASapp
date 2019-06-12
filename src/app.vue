@@ -31,7 +31,9 @@
                     <span class="mui-tab-label">发现</span>
                 </router-link>
                 <router-link class="mui-tab-item" to="/cart">
-                    <span class="mui-icon mui-icon-extra mui-icon-extra-cart"></span>
+                    <span class="mui-icon mui-icon-extra mui-icon-extra-cart">
+                        <span class="mui-badge"> {{this.$store.getters.getTotalCount}}</span>
+                        </span>
                     <span class="mui-tab-label">购物车</span>
                 </router-link>
                 <router-link class="mui-tab-item" to="/user">

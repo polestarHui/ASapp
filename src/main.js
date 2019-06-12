@@ -36,10 +36,13 @@ Vue.filter('dateFormat', function(dateStr, pattern = "YYYY--MM--DD HH:MM") {
 import VuePreview from 'vue-preview'
 Vue.use(VuePreview)
 
+// 导入仓储模块
+import store from './store.js'
 
 
 var vm = new Vue({
     el: '#app',
     render: c => c(app),
-    router
+    router,
+    store,
 })
